@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/WEB-INF/template/template.xhtml" >
+
+        <ui:define name="header">
+            <b:navBar id="theNavigatorTwo" brand-img="../resources/images/download2.png"  brand-img-style="height: 30px; width: 40px;" 
+                      inverse="true" fixed="top" fluid="true"  > 
+                <!--styleClass="navbar-form navbar-right"-->
+                <b:form   >
+                    <b:navbarLinks styleClass="navbar-form navbar-right"  >
+                        <!--<h3>Petrol Availability Registry</h3>-->
+                        <b:growl delay="7000" allowDismiss="true" globalOnly="true" />
+                    </b:navbarLinks>
+                </b:form>
+            </b:navBar>
+        </ui:define>
+
+        <ui:define name="content" >
+            <br /><br /><br /><br /><br /><br />
+
+            <b:form  >
+                <b:panel offset="3" span="6">
+                    <p /> 
+
+                    <div style="text-align: left" >
+
+                        <h2 style="text-align: center;">Edit Values</h2>
+                        <br />
+
+                        <b:inputText value="#{nsukkaPetrolStationBean.name}" label="Name of Petrol Station:" offset="1" span="9"/>
+                        <b:inputText value="#{nsukkaPetrolStationBean.address}" label="Address of Petrol Station" offset="1" span="9" />
+                        <b:inputText value="#{nsukkaPetrolStationBean.volumeOfPetrol}" label="Volume of Petrol Station" offset="1" span="9" />
+                        <b:inputText value="#{nsukkaPetrolStationBean.capacity}" label="Capacity:" offset="1" span="9" />
+                        <b:datepicker value="#{nsukkaPetrolStationBean.date}" label="Date" offset="1" span="9" />
+                    </div>
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                    <div style="align-content: center" >
+                        <b:commandButton value="Cancel" offset="2" span="4" look="danger" action="admin?faces-redirect=true" />
+                        <b:commandButton value="Save" span="4" look="primary" action="#{nsukkaPetrolStationsController.saveRecords()}" />
+                        <br /><br />
+                    </div>
+                </b:panel>
+            </b:form>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://java.sun.com/jsf/passthrough">
+      
+    <h:head>
+        <meta name="Real-Time Petroleum Availability Registry" content=" address of Pertoleum in Nsukka and Petrolleum availability" />
+        <link rel="shortcut icon" href="resources/images/petrol.png" />
+        <link rel="stylesheet" href="resources/css/styles.css" />
+        <title>
+            <ui:insert name="title" >
+                Petroleum Availability Registry (PAR)
+            </ui:insert>
+        </title>
+        
+        <ui:insert name="js" />
+        <ui:insert name="css" />
+        
+    </h:head>    
+       
+    <h:body>
+            <ui:insert name="header" >
+                <b:navBar id="theNavigator" brand-img="resources/images/download.png"  brand-img-style="height: 40px; width: 40px;" 
+                          inverse="true" fixed="top" fluid="true" brandHref="/RPAR2/home.jsf" > 
+                    <!--styleClass="navbar-form navbar-right"-->
+                    <b:form  >
+                        <b:navbarLinks styleClass="navbar-form navbar-right"  >
+                            <!--<h3>Petrol Availability Registry</h3>-->
+                            <b:navCommandLink value="Real-Time Petroleum Availability Registry" action="#{navigationController.toHome()}" />
+                            <b:navCommandLink value="Send us a Feedback?" action="#{navigationController.toFeedBack()}"  />
+                            <b:navLink id="loginId" value="Admin" onclick="$('.formValidationModalClass').modal('show')" style="font-size: medium;" />
+                            <!--<b:messages  />-->
+                            <b:growl delay="7000" allowDismiss="true" globalOnly="false" />
+                        </b:navbarLinks>
+                    </b:form>
+                </b:navBar>
+            </ui:insert>
+            
+            <ui:insert name="content" >position="top-left"
+                
+            </ui:insert>
+            
+            <ui:insert name="footer"  >
+                <br/><br/>
+                <div style="background-color: #686368; color: whitesmoke; clear: both;">
+                    <footer style="text-align: center;">
+                        <br/>
+                        <p><h4>© Real-Time Petroleum Availability Registry (RPAR) 2019</h4></p>
+                        <br/><br/>
+                        <b:form>
+                            
+                            <b:iconAwesome span="1" value="fa-twitter" size="3x" />
+                            <b:iconAwesome span="1" value="fa-whatsapp" size="3x" />
+                            <b:iconAwesome  span="1" value="fa-facebook" size="3x" />
+                            <b:iconAwesome  span="1" value="fa-instagram" size="3x" />
+                        </b:form>
+                        <br /><br /><br /><br />
+                    </footer>
+                </div>
+            </ui:insert>
+    </h:body>
+</html>
+
